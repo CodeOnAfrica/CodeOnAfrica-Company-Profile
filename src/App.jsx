@@ -4,6 +4,7 @@ import Layout from './layout/Layout'
 import Home from './components/Home'
 import Team from './components/Team'
 import Navbar from './components/Navbar'
+import About from './components/About'
 
 
 
@@ -15,7 +16,8 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route path='/' index element={<Home/>}/>
-        <Route path='/team' index element={<Team/>}/>
+        <Route path='/team'  element={<Team/>}/>
+        <Route path ='/about' element ={<About />} />
        
       </Route>
     </Routes>
