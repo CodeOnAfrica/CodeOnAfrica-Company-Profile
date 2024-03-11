@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './layout/Layout'
 import Home from './components/Home'
 
+
 const App = () => {
   return (
+    <>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Layout/>}>
@@ -12,6 +14,11 @@ const App = () => {
       </Route>
     </Routes>
     </BrowserRouter>
+   
+    
+    </>
+    
+    
   )
 }
 
