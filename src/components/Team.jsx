@@ -8,49 +8,49 @@ function Team() {
       role: "Chief Executive Officer and Founder (CEO)",
       name: "Markswell Ogutu",
       imagePath: "/Images/ceo.jpg",
-      description: "Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
+      description: "Full-Stack Software Developer, Odoo Developer, UI & UX Specialist, and Trainer. Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
     },
     {
       role: "Chief Operations Officer and Founder (COO)",
       name: "Evans Kurgat",
       imagePath: "/Images/coo.jpg",
-      description: "Responsible for operational efficiency, process optimization, and day-to-day management to ensure smooth business operations and growth."
+      description: "Public Relations Communication expert, Google Certified Writer, and Software Engineer. Multifaceted Professional bridging Communication and Software Engineering, responsible for operational efficiency, process optimization, and day-to-day management to ensure smooth business operations and growth."
     },
     {
       role: "Chief Technology Officer and Founder (CTO)",
       name: "Isaac Kiplangat",
       imagePath: "/Images/cto.jpg",
-      description: "In charge of technology strategy, innovation, and overseeing the technical aspects of product development."
+      description: "Full-Stack Software Developer with expertise in technology strategy, innovation, and overseeing the technical aspects of product development."
     },
     {
       role: "Chief Product Officer and Founder (CPO)",
       name: "Maryanne Wambui",
       imagePath: "/Images/cpo.jpg",
-      description: "Manages service development, product strategy, and ensures alignment with customer needs and market trends."
+      description: "Full-Stack Software Developer specialized in service development, product strategy, and ensuring alignment with customer needs and market trends."
     },
     {
       role: "Chief Sales Officer and Founder (CSO)",
       name: "Naomi Inyele",
       imagePath: "/Images/cso.jpg",
-      description: "Leads sales strategies, drives revenue generation, and fosters strong client relationships to drive business growth."
+      description: "Full-Stack Software Developer adept at leading sales strategies, driving revenue generation, and fostering strong client relationships to drive business growth."
     },
     {
       role: "Chief Marketing Officer and Founder (CMO)",
       name: "Joyce Mwangi",
       imagePath: "/Images/cmo.jpg",
-      description: "Directs marketing efforts, brand promotion, and customer acquisition strategies to increase market visibility and drive sales."
+      description: "Full-Stack Software Developer specializing in directing marketing efforts, brand promotion, and customer acquisition strategies to increase market visibility and drive sales."
     },
     {
       role: "Chief Financial Officer and Founder (CFO)",
       name: "Kevin Olongo",
       imagePath: "/Images/cfo.jpg",
-      description: "Oversees financial planning, reporting, risk management, and ensures the financial health and stability of the company."
+      description: "Full-Stack Software Developer proficient in overseeing financial planning, reporting, risk management, and ensuring the financial health and stability of the company."
     },
     {
       role: "Chief Human Resources Officer and Founder (CHRO)",
       name: "Brian Ochieng",
       imagePath: "/Images/chro.jpg",
-      description: "Manages HR functions including recruitment, employee relations, training, and ensures a positive work environment for all team members."
+      description: "Biotechnologist and Full-Stack Software Engineer. Expert in managing HR functions including recruitment, employee relations, training, and ensuring a positive work environment for all team members."
     }
   ];
 
