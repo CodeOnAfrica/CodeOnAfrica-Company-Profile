@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='md:px-16 px-4 py-4 flex justify-between items-center'>
+    <div className='md:px-16 px-4 py-4 flex justify-between items-center  '>
       <Link to={'/'} className='md:w-1/4'>
         <img src={Logo} alt="" className='h-32' />
       </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
       {menuOpen && (
       <div>
       <div className='z-100 absolute bg-opacity-30 bg-black top-0 right-0 w-full h-full'></div>
-      <div className='fixed  top-3 w-3/4  px-4 right-0 h-[96vh] rounded-l-2xl bg-white'>
+      <div className='fixed  top-2 w-3/4  px-4 right-0 h-[96vh]  rounded-l-2xl bg-white'>
         <div className='relative py-24 '>
           <MdClose onClick={()=> setMenuOpen(false)} size={25} className='absolute top-8 right-8'/>
       {menuitems.map((item, index) => (
@@ -67,7 +67,7 @@ const Navbar = () => {
           </div>
         ))}
       </div>
-      <button className='bg-black text-white text-lg font-medium w-5/6 rounded-full py-2'>Contact Us</button>
+      <button className='bg-black absolute bottom-8 right-2 text-white text-lg font-medium w-[92%] rounded-full py-2'>Contact Us</button>
       </div>
       </div>
       )}
