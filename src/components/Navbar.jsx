@@ -17,9 +17,9 @@ const Navbar = () => {
     { path: '/blog', link: 'Blog' },
   ];
 
-  const handleClick=()=>{
+  const handleClick=(index)=>{
     setMenuOpen(false)
-    setIsOpen(!isOpen)
+    setIsOpen(index === isOpen ? null : index );
   
   }
 
@@ -33,8 +33,9 @@ const Navbar = () => {
       <div className='w-1/2 hidden md:flex items-center gap-8 text-lg font-medium '>
         {menuitems.map((item, index) => (
           <div key={index + item.link} className='relative'>
-            <Link onClick={handleClick} className='hover:text-blue-500  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2' to={item.path}>
-              {item.link}{item.dropdown && item.dropdown? <FaChevronDown/>:''}
+            <Link onClick={()=>handleClick(index)} className='hover:text-blue-500  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2' to={item.path}>
+              {item.link}{item.dropdown && item.dropdown? (isOpen === index ? <FaChevronUp /> : <FaChevronDown />
+              ):''}
             </Link>
             {item.dropdown && isOpen && (
               <div className='absolute top-full grid left-0 shadow-md p-4 rounded-lg w-40'>
