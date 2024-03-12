@@ -1,12 +1,11 @@
 import React from 'react'
-import Logo from '../assets/logo-white.webp'
 
 const Footer = () => {
   return (
     <div className='bg-[#03113f] '>
     <div className='px-16 mx-auto grid items-start grid-cols-4 gap-8 pt-16 pb-8'>
       <div>
-        <img src={Logo} alt="" className='h-40 w-40 object-cover scale-125 -translate-y-4' />
+        <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover scale-125 -translate-y-4' />
         <p className='text-lg font-normal text-white/90'>Pioneering tech solutions that redefine the future. 
         </p>
       </div>

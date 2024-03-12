@@ -1,49 +1,42 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../images/logo.jpeg'; 
+import React, { useState } from 'react'
+import Logo from '/Images/logo.webp'
+import { Link } from 'react-router-dom'
 
-function Navbar() {
+const Navbar = () => {
+  const [isOpen , setIsOpen] = useState(false)
+  const menuitems = [
+    {path:'/', link:'Home'},
+    {path:'/about', link:'About Us'},
+    {path:'/services', link:'Services'},
+    {path:'', link:'Pages', dropdown:[]},
+    {path:'/team', link:'Teams'},
+    {path:'/blog', link:'Blog'},
+  ]
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light" style={{ marginRight: '80px', position: 'fixed', top: '0', width: '100%', zIndex: '1000', marginTop: '0', paddingTop: '0' }}>
-      <div className="container-fluid">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        {/* Logo */}
-        <img
-          src={Logo}
-          width="250"
-          height="100"
-          className="d-inline-block align-top"
-          alt="React Bootstrap logo"
-        />
-        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            <li className="nav-item mx-5">
-              <a className="nav-link fs-5" href="#about" style={{ color: 'blue', fontStyle: 'italic' }}>𝘼𝙗𝙤𝙪𝙩</a>
-            </li>
-            <li className="nav-item mx-5">
-              <a className="nav-link fs-5" href="#services" style={{ color: 'blue', fontStyle: 'italic' }}>𝙎𝙚𝙧𝙫𝙞𝙘𝙚𝙨</a>
-            </li>
-            <li className="nav-item mx-5">
-              <a className="nav-link fs-5" href="#team" style={{ color: 'blue', fontStyle: 'italic' }}>𝙏𝙚𝙖𝙢</a>
-            </li>
-            <li className="nav-item mx-5">
-              <a className="nav-link fs-5" href="#contact" style={{ color: 'blue', fontStyle: 'italic' }}>𝘾𝙤𝙣𝙩𝙖𝙘𝙩</a>
-            </li>
-          </ul>
-        </div>
+    <div className='px-16 py-4 flex items-center'>
+      <div className='w-1/4'>
+        <img src={Logo} alt="" className='h-32' />
       </div>
-    </nav>
-  );
+      <div className='w-1/2 flex items-center gap-8 text-lg font-medium '>
+        {menuitems.map((item, index)=>(
+          <div>
+          <Link key={index+item.link} onClick={()=>setIsOpen(!isOpen)} className='hover:text-blue-500 hover:border-2 hover:border-black hover:rounded-full py-2 px-4' to={item.path}>{item.link}</Link>
+          {isOpen && (
+          <div>
+            {item.dropdown && item.dropdown.map((item)=>{
+              <p>{item}</p>
+            })}
+          </div>
+           )}
+          </div>
+        ))}
+      </div>
+      <div className='flex justify-end w-1/4'>
+      <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Contact Us</button>
+      </div>
+    </div>
+  )
 }
 
-export default Navbar;
+export default Navbar
