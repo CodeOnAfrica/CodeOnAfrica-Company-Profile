@@ -6,7 +6,7 @@ import Team from './components/Team'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import Services from './components/Services'
-
+import Blog from './components/Blog'
 
 
 
@@ -22,6 +22,7 @@ const App = () => {
         <Route path='/services' index element={<Services/>}/>
         <Route path='/team'  element={<Team/>}/>
         <Route path ='/about' element ={<About />} />
+        <Route path ='/blog' element ={<Blog />} />
 
        
       </Route>
