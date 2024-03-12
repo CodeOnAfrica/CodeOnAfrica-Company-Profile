@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='bg-[#03113f] '>
-    <div className='px-16 mx-auto grid items-start grid-cols-4 gap-8 pt-16 pb-8'>
+    <div className=' px-4 md:px-16 mx-auto grid items-start md:grid-cols-4 gap-8 pt-16 pb-8'>
       <div>
         <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover scale-125 -translate-y-4' />
         <p className='text-lg font-normal text-white/90'>Pioneering tech solutions that redefine the future. 
@@ -51,7 +51,7 @@ const Footer = () => {
       </div>
     </div>
     <div className='bg-gray-200 w-[92%] mx-auto my-4  h-[0.05em]'></div>
-    <div className='pb-4 px-16 flex items-center justify-between'>
+    <div className='pb-4 px-4  md:px-16 flex items-center justify-between'>
       <h2 className='text-gray-400 text-sm font-medium'>Copyright  © 2024  CodeOn Africa. All Rights Reserved</h2>
       <div className='flex items-center gap-4'>
         <p className='text-sm font-medium underline text-gray-400'>Terms of Service</p>
