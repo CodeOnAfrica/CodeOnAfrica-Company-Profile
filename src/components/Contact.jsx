@@ -1,24 +1,35 @@
 import React, { useState } from 'react';
-import { FaInstagramSquare, FaSquareXTwitter, FaLinkedin, FaFacebook, FaGithub } from 'react-icons';
-import contact from '../images/contact.jpg'
+import { FaInstagramSquare, FaLinkedin, FaFacebookSquare, FaGithub } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom'; 
+import contact from '../images/contact.jpg';
+
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [comment, setComment] = useState(''); 
+  const [comment, setComment] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (name && email && comment) { 
+      setIsSubmitted(true);
+      setTimeout(() => {
+        navigate('/');
+      }, 4000);
+    } else {
+      alert('Please fill in all fields'); 
+    }
   };
 
-
-
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-y-auto bg-cover bg-opacity-50" style={{ backgroundImage: `url(${contact})` }}>
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-screen-md md:flex md:mx-auto">
+    <div className="relative min-h-screen flex items-center justify-left overflow-y-auto bg-cover bg-opacity-50" style={{ backgroundImage: `url(${contact})` }}>
+
+      <div className="max-w-screen-md md:flex md:mx-auto justify-left bg-gray-200 bg-opacity-90 p-8 rounded-lg shadow-md md:w-4/5">
         {/* Left Section (Location and Contacts) */}
-        <div className="md:w-1/2 pr-4 bg-white bg-opacity-90">
-          <h1 className="text-2xl font-semibold mb-4 text-black">Contact Us</h1>
+        <div className="md:w-1/2 pr-4">
+          <h1 className="text-2xl font-semibold mb-4 text-center md:text-left text-black">Contact Us</h1>
 
           {/* Location */}
           <div className="mb-4">
@@ -35,8 +46,8 @@ const Contact = () => {
 
           {/* Contacts */}
           <div className="mb-4">
-            <h2 className="text-lg font-medium text-black">for any info</h2>
-            <p>Email: codeonafrica@gmail.com</p>
+            <h2 className="text-lg font-medium text-black">For any info</h2>
+            <p>Email: <a href="mailto:codeonafrica@gmail.com">codeonafrica@gmail.com</a></p>
             <p>Phone: +254798840098</p>
           </div>
 
@@ -46,13 +57,13 @@ const Contact = () => {
               <FaInstagramSquare className="text-2xl text-pink-500 cursor-pointer hover:text-pink-700" />
             </a>
             <a href="https://twitter.com/Codeonafrica/" target="_blank" rel="noopener noreferrer">
-              <FaSquareXTwitter className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
+              <FaXTwitter className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
             </a>
             <a href="https://web.facebook.com/profile.php?id=61556826287759" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="text-2xl text-blue-800 cursor-pointer" />
+              <FaFacebookSquare className="text-2xl text-blue-800 cursor-pointer" />
             </a>
             <a href="https://github.com/CodeOnAfrica" target="_blank" rel="noopener noreferrer">
-              <FaGithub  className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
+              <FaGithub className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
             </a>
             <a href="https://www.linkedin.com/company/codeon-africa/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="text-2xl text-blue-800 cursor-pointer hover:text-blue-900" />
@@ -61,9 +72,9 @@ const Contact = () => {
         </div>
 
         {/* Right Section (Contact Form) */}
-        <div className="md:w-1/2 bg-white bg-opacity-90">
+        <div className="md:w-1/2">
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="bg-gray-200 bg-opacity-90 p-4 rounded-md">
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-600 text-black">
                   Name
@@ -107,12 +118,14 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit"  className="bg-white text-blue-800 px-4 py-2 rounded-md">
-                Submit
-              </button>
+              <div className="text-center">
+                <button type="submit" className="bg-blue-500 text-white font-bold px-4 py-2 rounded-md">
+                  Submit
+                </button>
+              </div>
             </form>
           ) : (
-            <p className="text-green-500">Message Recieved!</p>
+            <p className="text-blue-500 text-center">Message Received!</p>
           )}
         </div>
       </div>
