@@ -60,6 +60,7 @@ function Team() {
 
   return (
     <div className="bg-gray-100 py-16">
+      
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-8">Meet Our Creative and Smart Executive Team</h2>
         <div className="flex flex-wrap justify-center -mx-4">
