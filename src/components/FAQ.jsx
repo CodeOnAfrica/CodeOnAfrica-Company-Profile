@@ -25,7 +25,7 @@ const faqdata = [
   };
 
   return (
-    <div className='grid grid-cols-2 px-16 py-20 bg-blue-100 gap-8'>
+    <div className='grid md:grid-cols-2 px-4 md:px-16 py-20 bg-blue-100 gap-8'>
       <div>
         <h1 className='text-6xl font-medium'>Our Frequently Asked Questions</h1>
         <p className='text-xl my-8 text-gray-800'>Explore our Frequently Asked Questions to gain insights into our tech solutions and processes.  
