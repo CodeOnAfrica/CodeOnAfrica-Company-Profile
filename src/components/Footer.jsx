@@ -3,9 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='bg-[#03113f] '>
-    <div className=' px-4 md:px-16 mx-auto grid items-start md:grid-cols-4 gap-8 pt-16 pb-8'>
+    <div className=' px-4 md:px-16 grid items-start md:grid-cols-4 gap-8 pt-16 pb-8'>
       <div>
-        <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover scale-125 -translate-y-4' />
+        <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover md:scale-125 md:-translate-y-4' />
         <p className='text-lg font-normal text-white/90'>Pioneering tech solutions that redefine the future. 
         </p>
       </div>

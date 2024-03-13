@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 
 const Layout = () => {
   return (
-    <div className='w-screen'>
+    <div className='w-'>
       <Navbar/>
       <Outlet/>
       <Footer/>
