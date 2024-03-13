@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className='md:px-16 px-4 pt-16 grid md:grid-cols-3 items-start'>
       <div className='md:col-span-2 md:w-5/6'>
-        <h1 className='text-5xl md:text-7xl font-bold leading-tight'>Bring The Future For The Technology Companies</h1>
+        <h1 className='text-5xl md:text-7xl font-bold leading-tight'>Building Tomorrow's Tech Today</h1>
       </div>
 
       {/* second */}
