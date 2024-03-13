@@ -147,7 +147,7 @@ const Navbar = () => {
               <MdClose onClick={() => setMenuOpen(false)} size={25} className='absolute top-8 right-8' />
               {menuitems.map((item, index) => (
                 <div key={index + item.link} className='relative'>
-                  <Link onClick={() => setIsOpen(!isOpen)} className='hover:text-blue-500  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2' to={item.path}>
+                  <Link onClick={() => setMenuOpen(false)} className='hover:text-blue-500  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2' to={item.path}>
                     {item.link}{item.dropdown && item.dropdown ? <FaChevronDown /> : ''}
                   </Link>
                   {item.dropdown && isOpen && (
