@@ -140,9 +140,10 @@ const Services = () => {
   ];
 
   return (
-    <div className="grid  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:px-16 px-4 py-8 mx-auto">
+    <div className="gap-8 md:px-16 px-4 py-8">
       <h1 className='md:text-5xl text-4xl font-bold text-black
          underline decoration-8 my-4 underline-offset-8 decoration-blue-900  '>Our Services</h1>
+    <div className="grid pt-4 gap-8  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3  mx-auto">
       {services.map((service, index) => (
         <ServiceCard
           key={index}
@@ -153,6 +154,7 @@ const Services = () => {
           technologies={service.technologies}
         />
       ))}
+    </div>
     </div>
   );
 };

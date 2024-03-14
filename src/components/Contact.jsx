@@ -24,11 +24,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-left overflow-y-auto bg-cover bg-opacity-50" style={{ backgroundImage: `url(${contact})` }}>
+    <div className="md:relative min-h-screen p-4 md:px-0  flex items-center w-full justify-left overflow-y-auto bg-cover bg-opacity-50" style={{ backgroundImage: `url(${contact})` }}>
 
-      <div className="max-w-screen-md md:flex md:mx-auto justify-left bg-gray-200 bg-opacity-90 p-8 rounded-lg shadow-md md:w-4/5">
+      <div className="max-w-screen-md md:flex md:mx-auto justify-left w-full bg-gray-200 bg-opacity-90  rounded-lg shadow-md md:w-4/5">
         {/* Left Section (Location and Contacts) */}
-        <div className="md:w-1/2 pr-4">
+        <div className="md:w-1/2 p-4">
           <h1 className="text-2xl font-semibold mb-4 text-center md:text-left text-black">Contact Us</h1>
 
           {/* Location */}
@@ -72,11 +72,11 @@ const Contact = () => {
         </div>
 
         {/* Right Section (Contact Form) */}
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 w-full p-4">
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="bg-gray-200 bg-opacity-90 p-4 rounded-md">
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-600 text-black">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-600">
                   Name
                 </label>
                 <input
