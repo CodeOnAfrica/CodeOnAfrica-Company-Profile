@@ -1,4 +1,3 @@
-import React from "react";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
@@ -56,6 +55,20 @@ const Services = () => {
         ],
         technologies: ["Python", "Java", "C#", ".NET", "SQL", "MongoDB"],
       },
+      {
+        title: "Odoo ERP Development & Consultation",
+        image: "https://images.unsplash.com/photo-1620634415912-ec5aa1e89d0d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fElvVCUyMFNvbHV0aW9uc3xlbnwwfHwwfHx8MA%3D%3D",
+        description: "Our Odoo ERP services are tailored to streamline your business processes and enhance operational efficiency. We specialize in developing, customizing, and consultations on Odoo ERP solutions to fit the unique needs of your business. From initial setup and configuration to advanced custom module development, our team ensures that your Odoo ERP system aligns perfectly with your business objectives.",
+        additionalDescription: [
+          "Custom Module Development: Extend the functionality of your Odoo ERP with custom modules that cater to your specific business requirements.",
+          "ERP Customization: Modify existing Odoo modules to better fit your workflows, processes, and reporting needs.",
+          "Consultancy: Leverage our expertise to optimize your ERP strategy, improve system architecture, and ensure seamless integration with other business applications.",
+          "Implementation and Training: Get up and running with Odoo ERP quickly and efficiently, including comprehensive staff training to ensure user adoption and proficiency.",
+          "Support and Maintenance: Benefit from ongoing support and maintenance to keep your Odoo ERP system running smoothly and up-to-date with the latest features and security updates."
+        ],
+        technologies: ["Python", "Javascript", "NGINX", "Apache", "PostgreSQL", "Bootstrap", "D3.js", "Google Analytics", "G Suite", "Mandrill", "AdRoll"],
+      }
+      ,
     {
         title: "Cloud Computing Services",
         image: "https://cdn.techjockey.com/blog/wp-content/uploads/2022/09/08130541/What-is-Cloud-Computing-with-Examples-_feature.jpg",

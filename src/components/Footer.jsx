@@ -40,13 +40,13 @@ const Footer = () => {
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.instagram/codeonafrica">Instagram </a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
-            <a href="">Facebook</a></li>
+            <a href="https://www.facebook.com/profile.php?id=61556826287759">Facebook</a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.linkedin.com/company/codeon-africa">Linkedin</a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.twitter.com/codeonafrica">Twitter X</a> </li>
-          <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
-            <a href="">Youtube</a></li>
+          {/* <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
+            <a href="">Youtube</a></li> */}
         </ul>
       </div>
     </div>

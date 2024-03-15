@@ -100,7 +100,7 @@ const Navbar = () => {
     { path: '/', link: 'Home' },
     { path: '/about', link: 'About Us' },
     { path: '/services', link: 'Services' },
-    { path: '', link: 'Pages', dropdown: [{ path: '/about', link: 'Portfolio' }, { path: '#', link: 'FAQ' }] },
+    { path: '', link: 'Pages', dropdown: [{ path: '/about', link: 'Portfolio' }, { path: '/faq', link: 'FAQ' }] },
     { path: '/team', link: 'Teams' },
     { path: '/blog', link: 'Blog' },
   ];
