@@ -8,7 +8,7 @@ function Team() {
       role: "Chief Executive Officer and Founder (CEO)",
       name: "Markswell Ogutu",
       imagePath: "/Images/ceo.jpg",
-      description: "Full-Stack Software Developer, Odoo Developer, UI & UX Specialist, and Trainer. Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
+      description: "Full-Stack Software Developer, Odoo Developer & Consultant, UI & UX Specialist, Data Analyst and TOT. Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
     },
     {
       role: "Chief Operations Officer and Founder (COO)",

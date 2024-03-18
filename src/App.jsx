@@ -1,13 +1,16 @@
+
 import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes, useRoutes } from 'react-router-dom'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import Layout from './layout/Layout'
 import Home from './components/Home'
 import Team from './components/Team'
-import Navbar from './components/Navbar'
 import About from './components/About'
 import Services from './components/Services'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
+import FAQComponent from './components/FAQ'
 
 
 
@@ -27,7 +30,7 @@ const App = () => {
         <Route path ='/about' element ={<About />} />
         <Route path ='/blog' element ={<Blog />} />
         <Route path ='/contact' element ={<Contact />} />
-
+        <Route path ='/faq' element ={<FAQComponent />} />
 
        
       </Route>

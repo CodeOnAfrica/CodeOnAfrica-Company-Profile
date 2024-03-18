@@ -3,9 +3,9 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='bg-[#03113f] '>
-    <div className=' px-4 md:px-16 mx-auto grid items-start md:grid-cols-4 gap-8 pt-16 pb-8'>
+    <div className=' px-4 md:px-16 grid items-start md:grid-cols-4 gap-8 pt-16 pb-8'>
       <div>
-        <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover scale-125 -translate-y-4' />
+        <img src={'/Images/logo-white.webp'} alt="" className='h-40 w-40 object-cover md:scale-125 md:-translate-y-4' />
         <p className='text-lg font-normal text-white/90'>Pioneering tech solutions that redefine the future. 
         </p>
       </div>
@@ -40,13 +40,13 @@ const Footer = () => {
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.instagram/codeonafrica">Instagram </a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
-            <a href="">Facebook</a></li>
+            <a href="https://www.facebook.com/profile.php?id=61556826287759">Facebook</a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.linkedin.com/company/codeon-africa">Linkedin</a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
             <a href="https://www.twitter.com/codeonafrica">Twitter X</a> </li>
-          <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
-            <a href="">Youtube</a></li>
+          {/* <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
+            <a href="">Youtube</a></li> */}
         </ul>
       </div>
     </div>
