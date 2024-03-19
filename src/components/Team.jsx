@@ -29,7 +29,7 @@ function Team() {
       description: "Full-Stack Software Developer specialized in service development, product strategy, and ensuring alignment with customer needs and market trends."
     },
     {
-      role: "Chief Sales Officer and Founder (CSO)",
+      role: "Chief Revenue Officer and Founder (CRO)",
       name: "Naomi Inyele",
       imagePath: "/Images/cso.jpg",
       description: "Full-Stack Software Developer adept at leading sales strategies, driving revenue generation, and fostering strong client relationships to drive business growth."
@@ -51,6 +51,12 @@ function Team() {
       name: "Brian Ochieng",
       imagePath: "/Images/chro.jpg",
       description: "Biotechnologist and Full-Stack Software Engineer. Expert in managing HR functions including recruitment, employee relations, training, and ensuring a positive work environment for all team members."
+    },
+    {
+      role: "Chief Data Officer and Founder (CDO)",
+      name: "Joy Chepngetich",
+      imagePath: "/Images/cdo.jpg",
+      description: "Full-Stack Software Developer  responsible for overseeing the company's data strategy and analytics initiatives. Ensuring that the company collects, manages, and analyzes data effectively to drive informed decision-making and business outcomes."
     }
   ];
 
@@ -60,25 +66,45 @@ function Team() {
 
   return (
     <div className="bg-gray-100 py-16">
-      
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-semibold text-center mb-8">Meet Our Creative and Smart Executive Team</h2>
+        <div className="flex justify-center mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
+          <div className={`bg-white rounded-lg shadow-md ${activeMember === 0 ? 'border-2 border-blue-500' : ''} hover:bg-gray-200 transition duration-300`}>
+              <div className="p-4">
+                <div className="flex justify-center mb-4">
+                  <img
+                    src={teamMembers[0].imagePath}
+                    alt={teamMembers[0].name}
+                    className={`w-${activeMember === 0 ? '48' : '32'} h-${activeMember === 0 ? '48' : '32'} rounded-full cursor-pointer`}
+                    onClick={() => handleMemberClick(0)}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-center mb-2">{teamMembers[0].name}</h3>
+                <p className="text-gray-600 text-center mb-4">{teamMembers[0].role}</p>
+                {activeMember === 0 && (
+                  <p className="text-gray-700 text-center">{teamMembers[0].description}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-wrap justify-center -mx-4">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
-              <div className={`bg-white rounded-lg shadow-md ${activeMember === index ? 'border-2 border-blue-500' : ''}`}>
+          {teamMembers.slice(1).map((member, index) => (
+            <div key={index + 1} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
+              <div className={`bg-white rounded-lg shadow-md ${activeMember === index + 1 ? 'border-2 border-blue-500' : ''} hover:bg-gray-200 transition duration-300`}>
                 <div className="p-4">
                   <div className="flex justify-center mb-4">
                     <img
                       src={member.imagePath}
                       alt={member.name}
-                      className={`w-${activeMember === index ? '48' : '32'} h-${activeMember === index ? '48' : '32'} rounded-full cursor-pointer`}
-                      onClick={() => handleMemberClick(index)}
+                      className={`w-${activeMember === index + 1 ? '48' : '32'} h-${activeMember === index + 1 ? '48' : '32'} rounded-full cursor-pointer`}
+                      onClick={() => handleMemberClick(index + 1)}
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-center mb-2">{member.name}</h3>
                   <p className="text-gray-600 text-center mb-4">{member.role}</p>
-                  {activeMember === index && (
+                  {activeMember === index + 1 && (
                     <p className="text-gray-700 text-center">{member.description}</p>
                   )}
                 </div>
@@ -86,6 +112,7 @@ function Team() {
             </div>
           ))}
         </div>
+
         <div className="flex flex-wrap-reverse items-center mb-4">
           <div className="w-full md:w-1/2 lg:w-1/2 xl:w-3/5">
             <h3 className="text-xl font-semibold text-center md:text-centre mb-2">A Supportive Remote Work Culture For Everyone</h3>
@@ -98,10 +125,10 @@ function Team() {
           </div>
           <div className="w-full md:w-1/2 lg:w-1/2 xl:w-2/5 flex justify-center">
             <div className="flex justify-center flex-wrap">
-              <img src="/Images/culture1.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mr-2 mb-2" />
-              <img src="/Images/culture2.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mr-2 mb-2" />
-              <img src="/Images/culture3.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mr-2 mb-2" />
-              <img src="/Images/culture4.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mb-2" />
+              <img src="/Images/culture1.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mb-2 transition duration-300 transform hover:scale-110" />
+              <img src="/Images/culture2.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mb-2 transition duration-300 transform hover:scale-110" />
+              <img src="/Images/culture3.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mb-2 transition duration-300 transform hover:scale-110" />
+              <img src="/Images/culture4.jpg" alt="Remote Work Culture" className="w-40 h-32 rounded-lg mb-2 transition duration-300 transform hover:scale-110" />
             </div>
           </div>
         </div>
