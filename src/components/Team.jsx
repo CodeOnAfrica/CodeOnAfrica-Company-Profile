@@ -65,10 +65,10 @@ function Team() {
   };
 
   return (
-    <div className="bg-gray-100 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-8">Meet Our Creative and Smart Executive Team</h2>
-        <div className="flex justify-center mb-8">
+    <div className="bg-gray-100 py-16 md:px-16">
+      <div className="">
+        <h2 className="text-5xl font-semibold text-start mb-8">Meet Our Leadership Team</h2>
+        {/* <div className="flex justify-center mb-8">
           <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
           <div className={`bg-white rounded-lg shadow-md ${activeMember === 0 ? 'border-2 border-blue-500' : ''} hover:bg-gray-200 transition duration-300`}>
               <div className="p-4">
@@ -88,18 +88,18 @@ function Team() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-wrap justify-center -mx-4">
-          {teamMembers.slice(1).map((member, index) => (
-            <div key={index + 1} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 mb-8">
-              <div className={`bg-white rounded-lg shadow-md ${activeMember === index + 1 ? 'border-2 border-blue-500' : ''} hover:bg-gray-200 transition duration-300`}>
+        </div> */}
+        <div className="grid md:grid-cols-4 gap-8">
+          {teamMembers.map((member, index) => (
+            <div key={index } className="">
+              <div className={`bg-white rounded-lg shadow-md ${activeMember === index  ? 'border-2 border-blue-500' : ''} hover:bg-gray-200 transition duration-300`}>
                 <div className="p-4">
-                <div className={`flex justify-center ${ activeMember ===index+ 1?"h-32 w-32":"h-48 w-48"} overflow-hidden mx-auto rounded-full mb-4`}>
+                <div className={`flex justify-center ${ activeMember ===index?"h-32 w-32":"h-48 w-48"} overflow-hidden mx-auto rounded-full mb-4`}>
                     <img
                       src={member.imagePath}
                       alt={member.name}
                       className={` h-full w-full rounded-full object-cover cursor-pointer`}
-                      onClick={() => handleMemberClick(index + 1)}
+                      onClick={() => handleMemberClick(index)}
                     />
                   </div>
                   <h3 className="text-xl font-semibold text-center mb-2">{member.name}</h3>
@@ -113,7 +113,7 @@ function Team() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 items-start mb-4 md:gap-8 gap-4 mt-20">
+        {/* <div className="grid md:grid-cols-2 items-start mb-4 md:gap-8 gap-4 mt-20">
           <div className="w-full flex flex-col justify-center items-center ">
             <h3 className="text-xl font-semibold text-center  mb-2">A Supportive Remote Work Culture For Everyone</h3>
             <p className="text-gray-600 text-center  mb-8">
@@ -148,7 +148,7 @@ function Team() {
           </div>
           </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
