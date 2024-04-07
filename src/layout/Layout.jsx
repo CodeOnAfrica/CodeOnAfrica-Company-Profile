@@ -6,7 +6,7 @@ import MegaNavbar from '../components/MegaNavbar'
 
 const Layout = () => {
   return (
-    <div className='w-screen relative'>
+    <div className='w-screen relative no-scrollbar'>
       <MegaNavbar/>
       <div className='md:pt-28'>
       <Outlet/>

@@ -11,6 +11,12 @@ import Services from './components/Services'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
 import FAQComponent from './components/FAQ'
+import TermsCondition from './components/TermsCondition'
+import Portfolio from './components/Portfolio'
+import CaseStudies from './components/CaseStudies'
+import Quotations from './components/Quotations'
+import Resources from './components/Resources'
+import NotFound from './components/NotFound'
 
 
 
@@ -31,6 +37,12 @@ const App = () => {
         <Route path ='/blog' element ={<Blog />} />
         <Route path ='/contact' element ={<Contact />} />
         <Route path ='/faq' element ={<FAQComponent />} />
+        <Route path='/terms-conditions' element={<TermsCondition/>}/>
+        <Route path='/portfolio' element={<Portfolio/>}/>
+        <Route path='/case-studies' element={<CaseStudies/>}/>
+        <Route path='/resources' element={<Resources/>}/>
+        <Route path='/quotation' element={<Quotations/>}/>
+        <Route path='*' element={<NotFound/>}/>
 
        
       </Route>

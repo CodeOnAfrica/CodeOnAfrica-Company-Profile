@@ -21,22 +21,43 @@ const Navbar = () => {
     // Add more services as needed
   ];
 
-  // Mock data for pages dropdown
-  const pagesMockData = [
-    { title: 'Portfolio', path: '/portfolio' },
-    { title: 'FAQ', path: '/faq' },
-    { title: 'Our Quotations', path: '/quotations' },
-    { title: 'Resources', path: '/resources' },
-    { title: 'Case Studies', path: '/case-studies' }
-    // Add more pages as needed
-  ];
+ // Mock data for pages dropdown
+const pagesMockData = [
+  { 
+    title: 'Portfolio', 
+    description: 'Explore our portfolio showcasing our latest projects.', 
+    path: '/portfolio' 
+  },
+  { 
+    title: 'FAQ', 
+    description: 'Find answers to frequently asked questions about our services.', 
+    path: '/faq' 
+  },
+  { 
+    title: 'Our Quotations', 
+    description: 'Discover quotes and testimonials from our satisfied clients.', 
+    path: '/quotations' 
+  },
+  { 
+    title: 'Resources', 
+    description: 'Access helpful resources and guides related to software development.', 
+    path: '/resources' 
+  },
+  { 
+    title: 'Case Studies', 
+    description: 'Explore in-depth case studies highlighting our successful projects.', 
+    path: '/case-studies' 
+  }
+  // Add more 
+];
+
 
   const menuitems = [
     { path: '/', link: 'Home' },
     { path: '/about', link: 'About Us' },
     { path: '/services', link: 'Services', dropdown: servicesMockData }, // Added dropdown property
     { link: 'Pages', dropdown: pagesMockData }, // Updated to include pagesMockData
-    { path: '/team', link: 'Teams' },
+    { path: '/resources', link: 'Resources' },
     { path: '/blog', link: 'Blog' },
   ];
 
@@ -140,7 +161,7 @@ const Navbar = () => {
         <div className='w-3/4 py-8'>
             <h2 className='text-3xl font-bold'>Discuss Your Project</h2>
             <p className='text-lg mt-4 text-gray-400'>Ready to Discuss your Project?. Hit the link below to get in touch and scedule a meeting</p>
-            <button className='px-8 py-2 text-lg font mt-4 medium text-white bg-black'>Schedule a Meet</button>
+            <button onClick={()=>navigate('/contact')} className='px-8 py-2 text-lg font mt-4 medium text-white bg-black'>Schedule a Meet</button>
             </div>
         <div className="col-span-3 py-8 gap-8 items-start  grid-cols-3 grid">
           {megaMenuData.map((menuItem, index) => (
