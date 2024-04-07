@@ -51,7 +51,7 @@ const OurValues = () => {
             <div key={index} className={`${hoveredTitle === item.title ?  'w-full bg-white text-blue-500 px-4 py-2 rounded-full':'w-full border-white border-2 text-white rounded-full px-4 py-2'}`}
               onMouseEnter={() => setHoveredTitle(item.title)}
             >
-              <p className="font-medium cursor-pointer text-md md:text-xl ">{item.title}</p>
+              <p className="font-medium cursor-pointer flex items-center gap-2 text-md md:text-xl ">{item.title}</p>
             </div>
           ))}
         </div>
