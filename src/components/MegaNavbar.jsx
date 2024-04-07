@@ -15,9 +15,9 @@ const Navbar = () => {
 
   // Mock data for services mega menu
   const servicesMockData = [
-    { path:'/',title: 'Web Development', description: 'We specialize in creating modern and responsive websites that drive traffic and engage users.', path: '/web-development' },
-    { path:'',title: 'Mobile App Development', description: 'From iOS to Android, we build custom mobile apps that elevate user experiences.', path: '/mobile-app-development' },
-    {path:'', title: 'E-commerce Solutions', description: 'Boost your online sales with our custom e-commerce platforms tailored to your business.', path: '/e-commerce-solutions' },
+    { path:'/services',title: 'Web Development', description: 'We specialize in creating modern and responsive websites that drive traffic and engage users.', path: '/web-development' },
+    { path:'/sevices',title: 'Mobile App Development', description: 'From iOS to Android, we build custom mobile apps that elevate user experiences.', path: '/mobile-app-development' },
+    {path:'/services', title: 'E-commerce Solutions', description: 'Boost your online sales with our custom e-commerce platforms tailored to your business.', path: '/e-commerce-solutions' },
     // Add more services as needed
   ];
 
@@ -54,7 +54,7 @@ const pagesMockData = [
 
   const menuitems = [
     { path: '/', link: 'Home' },
-    { path: '/about', link: 'About Us' },
+    { path: '/about', link: 'About' },
     { path: '/services', link: 'Services', dropdown: servicesMockData }, // Added dropdown property
     { link: 'Pages', dropdown: pagesMockData }, // Updated to include pagesMockData
     { path: '/resources', link: 'Resources' },
