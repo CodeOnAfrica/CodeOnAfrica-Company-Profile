@@ -7,6 +7,7 @@ import contact from '../images/contact.jpg';
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('')
   const [comment, setComment] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate(); 
@@ -24,57 +25,59 @@ const Contact = () => {
   };
 
   return (
-    <div className="md:relative min-h-screen p-4 md:px-0  flex items-center w-full justify-left overflow-y-auto bg-cover bg-opacity-50" style={{ backgroundImage: `url(${contact})` }}>
+    <div className=" min-h-screen py-12  items-center w-4/5 mx-auto">
 
-      <div className="max-w-screen-md md:flex md:mx-auto justify-left w-full bg-gray-200 bg-opacity-90  rounded-lg shadow-md md:w-4/5">
+      <div className="grid md:grid-cols-2 w-full rounded-lg  items-start">
         {/* Left Section (Location and Contacts) */}
-        <div className="md:w-1/2 p-4">
-          <h1 className="text-2xl font-semibold mb-4 text-center md:text-left text-black">Contact Us</h1>
+        <div className="p-4">
+          <h1 className="text-3xl font-bold mb-4 text-center md:text-left text-black">Contact CodeOn Africa</h1>
+          <p className='text-xl font-normal w-3/4 my-4'>We appreciate your interest in Code On Africa. Whether you have a specific project in mind or would like to learn more about what we do, 
+            Link with us below.</p>
 
           {/* Location */}
-          <div className="mb-4">
-            <h2 className="text-lg font-medium text-black">Location</h2>
-            <a
-              href="https://maps.app.goo.gl/32g9GDB1keAMfDzq5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
-            >
-              CodeOnAfrica Nairobi
-            </a>
+          <div className="my-8 flex gap-4 items-center">
+            <h2 className="text-xl font-medium text-black">Call Us:</h2>
+            <p className='text-xl font-medium underline'>+(254) 798 840 098</p>
           </div>
 
           {/* Contacts */}
-          <div className="mb-4">
-            <h2 className="text-lg font-medium text-black">For any info</h2>
-            <p>Email: <a href="mailto:codeonafrica@gmail.com">codeonafrica@gmail.com</a></p>
-            <p>Phone: +254798840098</p>
+          <div className="my-8 flex gap-4 items-center">
+            <h2 className="text-xl font-medium text-black">Email Us:</h2>
+            <p className='text-xl text-black underline font-medium'><a href="mailto:codeonafrica@gmail.com">codeonafrica@gmail.com</a></p>
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex space-x-4">
+          <div className="flex justify-between w-1/2  gap-4 items-center ">
             <a href="https://www.instagram.com/codeonafrica/" target="_blank" rel="noopener noreferrer">
-              <FaInstagramSquare className="text-2xl text-pink-500 cursor-pointer hover:text-pink-700" />
+              <FaInstagramSquare size={32} className="text-2xl text-black hover:text-blue-500" />
             </a>
             <a href="https://twitter.com/Codeonafrica/" target="_blank" rel="noopener noreferrer">
-              <FaXTwitter className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
+              <FaXTwitter  size={32} className="text-2xl text-black hover:text-blue-500"  />
             </a>
             <a href="https://web.facebook.com/profile.php?id=61556826287759" target="_blank" rel="noopener noreferrer">
-              <FaFacebookSquare className="text-2xl text-blue-800 cursor-pointer" />
+              <FaFacebookSquare  size={32} className="text-2xl text-black hover:text-blue-500"  />
             </a>
             <a href="https://github.com/CodeOnAfrica" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-2xl text-black-400 cursor-pointer hover:text-gray-600" />
+              <FaGithub size={32} className="text-2xl text-black hover:text-blue-500"  />
             </a>
             <a href="https://www.linkedin.com/company/codeon-africa/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-2xl text-blue-800 cursor-pointer hover:text-blue-900" />
+              <FaLinkedin  size={32} className="text-2xl text-black hover:text-blue-500"  />
             </a>
+          </div>
+          <div className='mt-12'>
+            <h2 className='text-xl font-semibold'>What happens after sending a message?</h2>
+            <ul className='list-disc mx-8 space-y-4 py-4 text-lg decoration-blue-400'>
+              <li>We will send an introductory message</li>
+              <li>A Team member will reach you within 24 hours</li>
+            </ul>
           </div>
         </div>
 
         {/* Right Section (Contact Form) */}
-        <div className="md:w-1/2 w-full p-4">
+        <div className=" w-full  flex-col items-center ">
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="bg-gray-200 bg-opacity-90 p-4 rounded-md">
+            <form onSubmit={handleSubmit} className=" p-4 rounded-md ">
+              <h1 className='text-3xl font-semibold mb-4'>Shoot a Message</h1>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-600">
                   Name
@@ -90,7 +93,7 @@ const Contact = () => {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-600 text-black">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-600">
                   Email
                 </label>
                 <input
@@ -102,9 +105,22 @@ const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+                  Phone
+                </label>
+                <input
+                  type="number"
+                  id="phone"
+                  className="mt-1 p-2 w-full border rounded-md"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
 
               <div className="mb-4">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-600 text-black">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-600 ">
                   Message
                 </label>
                 <textarea
@@ -119,9 +135,10 @@ const Contact = () => {
               </div>
 
               <div className="text-center">
-                <button type="submit" className="bg-blue-500 text-white font-bold px-4 py-2 rounded-md">
+                <button type="submit" className="bg-blue-500 w-full text-white font-bold px-4 py-2 rounded-md">
                   Submit
                 </button>
+                <p className='text-start text-sm text-gray-600 mt-2 '>Do not share sensitive information (credit card numbers, National identification numbers,tax informations, passwords) through this form.</p>
               </div>
             </form>
           ) : (
