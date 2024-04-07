@@ -41,7 +41,7 @@ const App = () => {
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/case-studies' element={<CaseStudies/>}/>
         <Route path='/resources' element={<Resources/>}/>
-        <Route path='/quotation' element={<Quotations/>}/>
+        <Route path='/quotations' element={<Quotations/>}/>
         <Route path='*' element={<NotFound/>}/>
 
        
