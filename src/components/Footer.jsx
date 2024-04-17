@@ -47,8 +47,8 @@ const Footer = () => {
             <a href="https://www.linkedin.com/company/codeon-africa">Linkedin</a></li>
           <li className='hover:text-blue-400 hover:font-light transition-all cursor-pointer duration-200'>
             <a href="https://www.twitter.com/codeonafrica">Twitter X</a> </li>
-          {/* <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
-            <a href="">Youtube</a></li> */}
+          <li className='hover:text-blue-400 hover:font-light transition-all duration-200'>
+            <a href="https://github.com/CodeOnAfrica">Github</a></li>
         </ul>
       </div>
     </div>
