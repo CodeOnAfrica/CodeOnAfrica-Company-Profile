@@ -66,10 +66,10 @@ const OurValues = () => {
             ))}
           </div>
           {/* pattern */}
-          <div className='relative grid grid-cols-3   items-start pt-20 gap-8'>
-            <div className='w-40 h-40  border-white rounded-lg border-4'></div>
-            <div className='w-40 h-40  border-white rounded-lg border-4 mt-20'></div>
-            <div className='w-40 h-40  border-white rounded-lg border-4'></div>
+          <div className='relative grid md:grid-cols-3 items-center   md:items-start md:pt-20 gap-8'>
+            <div className='md:w-40 w-32 h-32 md:h-40  border-white rounded-lg border-4'></div>
+            <div className='md:w-40 md:h-40 w-32 h-32 border-white rounded-lg border-4 ml-20 md:mt-20'></div>
+            <div className='md:w-40 md:h-40 w-32 h-32 border-white rounded-lg border-4'></div>
           </div>
         </div>
       </div>
