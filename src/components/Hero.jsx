@@ -7,56 +7,46 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <div className='md:px-16 px-4 pt-16 grid md:grid-cols-3 items-start'>
+    <div className='md:w-full w-screen md:px-16 px-4 pt-8 grid md:grid-cols-3 items-start'>
       <div className='md:col-span-2 md:w-5/6'>
-        <h1 className='text-5xl md:text-7xl font-bold leading-tight'>Building Tomorrow's Tech Today</h1>
-      </div>
+        <h1 className='text-4xl md:text-7xl font-bold leading-tight'>Building Tomorrow's Tech Today</h1>
 
-      {/* second */}
-      <div className='pt-2'>
-        <div className='bg-blue-200 rounded-lg flex items-center p-4 bg-opacity-45'>
-          <div className='p-2 rounded-full  border border-dashed border-black decoration-dotted bg-blue-100 '>
-          <img src={'/Images/mzee.jpg'} alt="" className='h-20 w-20 rounded-full'/>
-          </div>
-          {/* 2 */}
-          <div className='p-2  rounded-full hover:border hover:border-dashed hover:border-black   bg-blue-100'>
-          <img src={'/Images/lady.jpg'} alt="" className='h-20 w-20 rounded-full'/>
-          </div>
-          {/* 3 */}
-          <div className=' p-2 rounded-full hover:border hover:border-dashed hover:border-black  bg-blue-100'>
-          <img src={'/Images/guy.jpg'} alt="" className='h-20 w-20 rounded-full'/>
-          </div>
-
-          <div>
-            <h2 className='text-6xl font-extrabold text-opacity-80 text-blue-950'>10+</h2>
-            <p className=' text-black capitalize text-md font-medium px-2'>Tech Experts</p>
-          </div>
-        </div>
-        <p className='mt-4 text-lg text-gray-500'>Meet our team of experts dedicated to delivering excellence
-           in every project. Passionate, skilled, and ready to innovate! </p>
-      </div>
-        {/*  */}
-        <div className='md:col-span-2  grid md:grid-cols-3 my-8 gap-8'>
-      <div className='md:col-span-2 bg-blue-800 bg-opacity-70 p-4 h-60  md: rounded-2xl  '>
-        <p className='p-3 rounded-full bg-blue-950 bg-opacity-80 text-white w-12'><FaHandsHelping size={25}/></p>
-        
+{/* banner 1 */}
+        <div className=' bg-blue-800 bg-opacity-70 p-4 gap-2 items-start  mt-4 justify-between md:items-center  md: rounded-2xl flex '>
+        <p className='p-3 rounded-full bg-blue-950 bg-opacity-80 text-white h-12 w-12'><FaHandsHelping size={25}/></p>
          <Link to={'/about'}>
-          <div className=' bottom-4 left-4 py-8 md:py-4 mt-8 md:mt-16'>
-        <h1 className='text-3xl font-semibold text-white'>Great Tech Ecosystem</h1>
-        <p className='text-lg text-gray-100'>A dynamic hub for innovation and excellence</p>
+          <div className=' '>
+        <h1 className='text-2xl font-semibold text-white'>Great Tech Ecosystem</h1>
+        <p className='text-md text-gray-100'>A dynamic hub for innovation and excellence</p>
         </div>
         </Link>
-        <Link to={'/about'} className='border hidden md:block float-end md:-translate-y-20 bottom-4 right-4 text-white w-16 h-16 rounded-full border-white p-4'>
+        <Link to={'/about'} className='border hidden md:block fl text-white w-16 h-16 rounded-full border-white p-4'>
           <MdArrowOutward size={32}/>
         </Link>
-
       </div>
-      <div className='py-4 px-8 bg-blue-100 rounded-2xl'>
-        <h1 className='text-6xl font-bold text-blue-950 text-opacity-90'>8+</h1>
-        <h2 className='font-medium my-1 text-lg'>Affiliate Company</h2>
+
+      {/* banner 2 */}
+      <div className='md:py-4 py-2 md:px-8 px-4 flex justify-between gap-4 mt-4 bg-blue-100 rounded-xl md:rounded-2xl'>
+        {/* <div className=''>
+          <h1 className='text-4xl font-bold text-blue-950 text-opacity-90'>8+</h1>
+        <h2 className='font-medium whitespace-nowrap my-1 text-md'>Affiliate Company</h2>
+        </div> */}
         <p>Discover how our collaborations redefine industry standards and drive innovation.</p>
       </div>
+
+      {/* cta */}
+      <div className=' mt-8 md:flex  grid gap-2 items-center md:gap-8'>
+        <button className="bg-sky-950 font-medium text-white px-8 py-3 rounded-full" > Request Quote</button>
+        <button className="text-sky-950 shadowy border border-sky-950 font-medium bg-white px-8 py-3 rounded-full" > <a href="mailto:info@codeonafrica.com">info@codeonafrica.com</a></button>
+        <button className="text-sky-950 shadowy border border-sky-950  font-medium bg-white px-8 py-3 rounded-full" ><a href="tel:+254114266430">+254 114 266 430</a></button>
       </div>
+      </div>
+
+      <div className='relative h-[60vh] mt-8 md:mt-0 md:-ml-8 w-full'>
+        <img src="/Images/optimize.png" alt="" className=' rounded-md w-[90%] object-fit  overflow-hidden absolute top-0 md:left-8 z-10 ml-4 h-full md:w-full bg-cover' />
+        <div className=' pt-8 mt-8 bg-black w-64 h-full rounded-md'></div>
+      </div>
+        {/*  */}
       
       
     </div>

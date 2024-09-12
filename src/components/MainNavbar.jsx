@@ -66,8 +66,9 @@ const Navbar = () => {
           </div>
         ))}
       </div>
+      <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Book Appointment</button>
       <div className=' hidden md:flex justify-end w-1/4'>
-        <Link to='/contact' className='bg-black text-white text-lg font-medium px-8 py-4 rounded-full'>Contact Us</Link>
+        <Link to='/contact' className='bg-black text-white text-lg font-medium px-8 py-4 rounded-full'>Book Appointment</Link>
       </div>
 
       {menuOpen && (
@@ -92,8 +93,11 @@ const Navbar = () => {
                 </div>
               ))}
             </div>
+            
+              <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Book Appointment</button>
+          
             <Link to='/contact'>
-              <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Contact Us</button>
+              <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Book Appointment</button>
             </Link>
           </div>
         </div>

@@ -6,9 +6,9 @@ import MegaNavbar from '../components/MegaNavbar'
 
 const Layout = () => {
   return (
-    <div className='w-screen relative no-scrollbar'>
+    <div className=' relative overflow-y-scroll no-scrollbar h-screen '>
       <MegaNavbar/>
-      <div className='md:pt-28'>
+      <div className='md:pt-28 pt-20 '>
       <Outlet/>
       </div>
       <Footer/>
