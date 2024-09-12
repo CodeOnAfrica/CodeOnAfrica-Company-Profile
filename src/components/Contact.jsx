@@ -35,15 +35,22 @@ const Contact = () => {
             Link with us below.</p>
 
           {/* Location */}
-          <div className="my-8 flex gap-4 items-center">
+          <div className="my-8 grid grid-cols-4 gap-4 items-start">
             <h2 className="text-xl font-medium text-black">Call Us:</h2>
-            <p className='text-xl font-medium underline'>+(254) 798 840 098</p>
+            <div className='col-span-3 gap-4'>
+            <p className='text-lg '>+(254) 114 266 430</p>
+            <p className='text-lg  '>+(254) 745 913 429</p>
+            <p className='text-lg  '>+(254) 746 022 125</p>
+            </div>
           </div>
 
           {/* Contacts */}
-          <div className="my-8 flex gap-4 items-center">
-            <h2 className="text-xl font-medium text-black">Email Us:</h2>
-            <p className='text-xl text-black underline font-medium'><a href="mailto:codeonafrica@gmail.com">codeonafrica@gmail.com</a></p>
+          <div className="my-8 grid grid-cols-4 gap-4 items-start">
+            <h2 className="text-lg font-medium text-black">Email Us:</h2>
+            <div>
+            <p className='text-lg col-span-3 text-black underline font-medium'><a href="mailto:info@codeonafrica.com">info@codeonafrica.com</a></p>
+            <p className='text-lg text-black underline font-medium'><a href="mailto:info@codeonafrica.com">tech@codeonafrica.com</a></p>
+          </div>
           </div>
 
           {/* Social Media Icons */}

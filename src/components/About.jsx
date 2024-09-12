@@ -1,5 +1,5 @@
 import React from 'react'
-import Aboutimage from '../../public/Images/about.jpg'
+import Aboutimage from '/Images/about.jpg'
 import Team from './Team'
 import OurValues from './OurValues'
 import Schedule from './Schedule'

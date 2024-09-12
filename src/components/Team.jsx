@@ -4,12 +4,7 @@ function Team() {
   const [activeMember, setActiveMember] = useState(null);
 
   const teamMembers = [
-    {
-      role: "FullStack Developer , Team Lead",
-      name: "Markswell Ogutu",
-      imagePath: "/Images/ceo.jpg",
-      description: "Full-Stack Software Developer, Odoo Developer & Consultant, UI & UX Specialist, Data Analyst and TOT. Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
-    },
+    
     {
       role: "Frontend Developer, Operations Lead",
       name: "Evans Kurgat",
@@ -28,12 +23,7 @@ function Team() {
       imagePath: "/Images/cpo.jpg",
       description: "Full-Stack Software Developer specialized in service development, product strategy, and ensuring alignment with customer needs and market trends."
     },
-    {
-      role: "Revenue Analyst",
-      name: "Naomi Inyele",
-      imagePath: "/Images/cso.jpg",
-      description: "Full-Stack Software Developer adept at leading sales strategies, driving revenue generation, and fostering strong client relationships to drive business growth."
-    },
+
     {
       role: "UI/UX  & Product  Designer",
       name: "Joyce Mwangi",
@@ -57,7 +47,13 @@ function Team() {
       name: "Joy Chepngetich",
       imagePath: "/Images/cdo.jpg",
       description: "Full-Stack Software Developer  responsible for overseeing the company's data strategy and analytics initiatives. Ensuring that the company collects, manages, and analyzes data effectively to drive informed decision-making and business outcomes."
-    }
+    },
+    {
+      role: "FullStack Developer ",
+      name: "Markswell Ogutu",
+      imagePath: "/Images/ceo.jpg",
+      description: "Full-Stack Software Developer, Odoo Developer & Consultant, UI & UX Specialist, Data Analyst and TOT. Responsible for providing overall leadership, setting strategic direction, and ensuring the company's success and growth."
+    },
   ];
 
   const handleMemberClick = (index) => {

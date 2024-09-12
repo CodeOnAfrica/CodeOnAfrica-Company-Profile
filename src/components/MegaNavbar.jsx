@@ -53,12 +53,13 @@ const pagesMockData = [
 
 
   const menuitems = [
-    { path: '/', link: 'Home' },
     { path: '/about', link: 'About' },
     { path: '/services', link: 'Services', dropdown: servicesMockData }, // Added dropdown property
-    { link: 'Pages', dropdown: pagesMockData }, // Updated to include pagesMockData
+    { link: 'Our Process', dropdown: pagesMockData }, // Updated to include pagesMockData
     { path: '/resources', link: 'Resources' },
     { path: '/blog', link: 'Blog' },
+    { path: '/contact', link: 'Contact' },
+
   ];
 
   useEffect(() => {
@@ -100,54 +101,78 @@ const pagesMockData = [
   };
 
   return (
-    <div className={`md:px-16 md:fixed bg-white md:bg-opacity-95 z-100  top-0 right-0 w-full px-4 flex justify-between items-center transition-all duration-300 ${showShadow ? 'shadow-md' : ''}`}>
-        <Link to={'/'} className='md:w-1/4'>
-          <img src={Logo} alt="" className='md:h-28 h-16  translate-y-4' />
+    <div className={`md:px-16 md:fixed z-50  bg-white md:bg-opacity-95 z-100 top-0 right-0    shadow-gray-50  flex  items-center transition-all duration-300 ${showShadow ? 'shadow-md' : ''}`}>
+        <Link to={'/'} className='hidden md:block w-64'>
+          <img src={Logo} alt="" className='md:h-32 h-24  ' />
         </Link>
-        <HiMenuAlt1 size={35} onClick={() => setMenuOpen(!menuOpen)} className='md:hidden block text-blue-950 text-opacity-80' />
 
-        <div className='md:w-1/2 hidden md:flex items-center gap-8 text-lg font-medium '>
+{/* mobile logo */}
+        <div className='md:hidden flex justify-between items-center w-full px-4 bg-white bg-opacity-95 fixed top-0 left-0'>
+        <Link to={'/'} className=''>
+          <img src={Logo} alt="" className=' h-20  ' />
+        </Link>
+        <HiMenuAlt1 size={28} onClick={() => setMenuOpen(!menuOpen)} className='md:hidden block text-blue-950 text-opacity-80' />
+        </div>
+        
+        <div className='hidden md:flex justify-between gap-8 items-center w-5/6'>
+          {/* navbar */}
+          <div className='md:w-1/2 hidden md:flex items-center gap-4 text-lg font-medium '>
           {menuitems.map((item, index) => (
-            <div key={index + item.link} className='relative'>
+            <div key={index + item.link} className='relative flex'>
               <Link
                 onClick={() => handleClick(index)}
                 onMouseEnter={() => handleMouseEnter(index, item.dropdown)}
-                className='hover:text-blue-500  flex gap-2 items-center hover:underline hover:underline-offset-8 hover:border-black hover:rounded-full py-2 px-2'
+                className='hover:text-blue-500 whitespace-nowrap justify-center  flex  items-center hover:underline hover:underline-offset-8 hover:border-black hover:rounded-full  px-2'
                 to={item.path}
               >
-                {item.link}
+                 {item.link}
                 {item.dropdown && item.dropdown ? (megaMenuData ==index ? <FiChevronUp /> : <FiChevronDown />) : ''}
               </Link>
             </div>
           ))}
         </div>
-        <div className=' hidden md:flex justify-end w-1/4'>
-          <Link to='/contact' className='bg-black text-white text-lg font-medium px-8 py-4 rounded-full'>Contact Us</Link>
+        <div className=' hidden md:flex item-center gap-2 justify-between '>
+        <button
+            className='border-black border-2 text-black text-md font-medium px-2 py-2 rounded-xl hover:bg-black hover:text-white transition-all duration-300 flex items-center gap-2'
+            onClick={() => window.location.href = 'tel:+254114266430'}
+          >
+             Call: +254 114 266 430
+          </button>          
+          <Link to='/contact'><button className='bg-black text-white text-md border-black border-2 font-medium py-2  px-2 rounded-xl'>Book Appointment</button></Link>
+        </div>
+
         </div>
       
 
       {menuOpen && (
         <div>
-          <div className='z-100 absolute bg-opacity-30 bg-black top-0 right-0 w-full h-full'></div>
-          <div className='fixed  top-2 w-3/4  px-4 right-0 h-[96vh]  rounded-l-2xl bg-white'>
-            <div className='relative py-24 '>
+          {/* <div className='z-100 fixed bg-opacity-30 bg-black top-0 right-0 w-full h-full'></div> */}
+          <div className='fixed  top-0 w-screen  px-4 right-0 h-full  text-white bg-blue-800 '>
+            <div className='relative pt-24 w-full '>
               <MdClose onClick={() => setMenuOpen(false)} size={25} className='absolute top-8 right-8' />
               {menuitems.map((item, index) => (
-                <div key={index + item.link} className='relative'>
+                <div key={index + item.link} className=''>
                   <Link
                     onClick={() => setMenuOpen(false)}
-                    className='hover:text-blue-500  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2'
+                    className='hover:text-blue-500 text-xl  flex gap-2 items-center hover:border-2 hover:border-black hover:rounded-full py-2 px-2'
                     to={item.path}
                   >
                     {item.link}
-                    {item.dropdown && item.dropdown ? <FiChevronDown /> : <FiChevronUp/>}
-                  </Link>
+                    {item.dropdown && item.dropdown ? (megaMenuData ==index ? <FiChevronUp /> : <FiChevronDown />) : ''}
+                    </Link>
+                    <hr></hr>
                 </div>
               ))}
             </div>
-            <Link to='/contact'>
-              <button className='bg-black text-white text-lg font-medium px-8 py-4  rounded-full'>Contact Us</button>
-            </Link>
+            <div className=' bottom-4 left-0 mt-40  flex flex-col item-center gap-2 justify-between '>
+        <button
+            className='border-white border-2 text-center  text-white text-md font-medium py-2 rounded-xl hover:bg-black hover:text-white transition-all duration-300 '
+            onClick={() => window.location.href = 'tel:+254114266430'}
+          >
+             Call: +254 114 266 430
+          </button>          
+          <Link to='/contact'><button className='bg-black w-full text-white text-md border-black border-2 font-medium py-2  px-2 rounded-xl'>Book Appointment</button></Link>
+        </div>
           </div>
         </div>
       )}
