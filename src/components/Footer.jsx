@@ -14,7 +14,7 @@ const Footer = () => {
 
 
       <div className='grid grid-cols-2 gap-2 text-white text-lg font-medium'>
-        <h2 className='text-xl'>Our Company</h2>
+        <h2 className='col-span-2 font-mono text-xs uppercase tracking-[0.14em] text-cyan-300'>Our Company</h2>
         <ul className=' text-xl grid gap-2  capitalize text-gray-400'>
           <li onClick={()=>navigate('/about')} className='hover:text-blue-400 cursor-pointer hover:font-light transition-all duration-200'>About Us</li>
           <li onClick={()=>navigate('/portfolio')} className='hover:text-blue-400 cursor-pointer hover:font-light transition-all duration-200'>Portfolio</li>
@@ -26,7 +26,7 @@ const Footer = () => {
 
 
       <div className='grid grid-cols-2 gap-2 text-white text-lg font-medium'>
-        <h2 className='text-xl'>Important Links</h2>
+        <h2 className='col-span-2 font-mono text-xs uppercase tracking-[0.14em] text-cyan-300'>Important Links</h2>
         <ul className=' text-xl grid gap-2  capitalize text-gray-400'>
           <li  onClick={()=>navigate('/service-policy')} className='hover:text-blue-400 cursor-pointer hover:font-light transition-all duration-200'>Service Policy</li>
           <li onClick={()=>navigate('/terms-conditions')} className='hover:text-blue-400 cursor-pointer hover:font-light transition-all duration-200'>Terms & Conditions</li>
@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
 
       <div className='grid grid-cols-2 gap-2 text-white text-lg font-medium'>
-        <h2 className='text-xl'>Social Media</h2>
+        <h2 className='col-span-2 font-mono text-xs uppercase tracking-[0.14em] text-cyan-300'>Social Media</h2>
         <ul className='text-xl grid gap-2  capitalize text-gray-400'>
           <li className='hover:text-blue-400 hover:font-light transition-all cursor-pointer duration-200'>
             <a href="https://www.instagram/codeonafrica">Instagram </a></li>
@@ -54,7 +54,7 @@ const Footer = () => {
     </div>
     <div className='bg-gray-200 w-[92%] mx-auto my-4  h-[0.05em]'></div>
     <div className='pb-4 px-4  md:px-16 flex items-center justify-between'>
-      <h2 className='text-gray-400 text-sm font-medium'>Copyright  © 2024  CodeOn Africa. All Rights Reserved</h2>
+      <h2 className='text-gray-400 text-sm font-medium'>Copyright © {new Date().getFullYear()} CodeOn Africa. All Rights Reserved</h2>
       <div className='flex items-center gap-4'>
         <p onClick={()=>navigate('/terms-conditions#terms')} className='text-sm font-medium cursor-pointer underline text-gray-400'>Terms of Service</p>
         <p  onClick={()=>navigate('/terms-conditions#privacy')} className='text-sm font-medium cursor-pointer underline text-gray-400'>Privacy Policy</p>

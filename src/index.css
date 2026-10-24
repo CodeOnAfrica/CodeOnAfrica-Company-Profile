@@ -2,54 +2,217 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-body{
-  background-color: #082e99;
-} */
+/*
+ * CodeOn Africa — the technical-grid look (hairline rules, corner markers, monospace labels, one oversized display
+ * headline, a CSS 3D object), in the brand's own blue, cyan and ink.
+ *
+ * Three themes, chosen by the visitor (ThemeSwitcher) and set on <html data-theme> before paint (index.html):
+ *   classic (default)  dark ink first screen and feature sections; light pages.
+ *   dark               ink sections and the pages dark too.
+ *   light              ink sections turn light as well.
+ * Neutrals are RGB channels so Tailwind's opacity modifiers keep working.
+ */
+:root {
+  --action: #00b0d0;
+  --c-background: 244 247 251;
+  --c-foreground: 8 20 52;
+  --c-card: 255 255 255;
+  --c-muted: 230 237 247;
+  --c-muted-foreground: 74 87 112;
+  --c-border: 200 212 230;
+  --c-heading: 0 72 168;
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+  --ink-bg: #03113f;
+  --ink-head: rgba(3, 17, 63, 0.95);
+  --ink-fg: #ffffff;
+  --ink-dim: #b9c8e6;
+  --ink-rule: rgba(255, 255, 255, 0.12);
+  --ink-rule-strong: rgba(255, 255, 255, 0.3);
+  --ink-cell: #0a1f5c;
+  --ink-soft: rgba(10, 31, 92, 0.45);
+  --ink-link: #00b0d0;
+  --ink-grid: rgba(255, 255, 255, 0.07);
+  color-scheme: light;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+:root[data-theme='dark'] {
+  --c-background: 3 10 38;
+  --c-foreground: 230 237 250;
+  --c-card: 9 24 70;
+  --c-muted: 6 18 54;
+  --c-muted-foreground: 170 187 214;
+  --c-border: 30 52 110;
+  --c-heading: 120 200 235;
+  color-scheme: dark;
 }
 
-/* custom */
-@layer utilities {
-  /* Custom scrollbar */
-  .custom-scrollbar::-webkit-scrollbar {
+/* Cyan text on a light ground is too faint, so links and the current page go brand blue. */
+:root[data-theme='light'] {
+  --ink-bg: #f4f7fb;
+  --ink-head: rgba(244, 247, 251, 0.95);
+  --ink-fg: #03113f;
+  --ink-dim: #4a5770;
+  --ink-rule: rgba(0, 72, 168, 0.16);
+  --ink-rule-strong: rgba(0, 72, 168, 0.45);
+  --ink-cell: #ffffff;
+  --ink-soft: #ffffff;
+  --ink-link: #0048a8;
+  --ink-grid: rgba(0, 72, 168, 0.06);
+}
+
+@layer base {
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+}
+
+@layer components {
+  /* The one main action: cyan with ink text, corner clipped like a part-number plate. */
+  .btn-action {
+    @apply inline-flex min-h-tap items-center justify-center gap-2 bg-action px-6 py-3 font-mono text-sm font-semibold uppercase tracking-[0.06em] text-action-ink transition-colors hover:bg-action-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-fg;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  /* Everything else: a hairline outline in the section's own ink. */
+  .btn-ghost {
+    @apply inline-flex min-h-tap items-center justify-center gap-2 px-6 py-3 font-mono text-sm font-semibold uppercase tracking-[0.06em] text-ink-fg transition-colors hover:text-ink-link focus:outline-none focus-visible:ring-2 focus-visible:ring-ink-link;
+    box-shadow: inset 0 0 0 1px var(--ink-rule-strong);
+  }
+  .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--ink-link); }
+
+  /* Small monospace label above a heading. Colour comes from the context. */
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-[0.14em];
+  }
+
+  /* Expanded, uppercase display headline. */
+  .display {
+    @apply font-display font-extrabold uppercase;
+    font-stretch: 118%;
+    letter-spacing: -0.02em;
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  /* Hairline cell grid: each cell draws its own right and bottom rule; corner brackets in cyan on hover. */
+  .cells {
+    display: grid;
+    border-top: 1px solid var(--cell-rule, var(--ink-rule));
+    border-left: 1px solid var(--cell-rule, var(--ink-rule));
+  }
+  .cells > * {
+    position: relative;
+    border-right: 1px solid var(--cell-rule, var(--ink-rule));
+    border-bottom: 1px solid var(--cell-rule, var(--ink-rule));
+  }
+  .cells > *::before,
+  .cells > *::after {
+    content: '';
+    position: absolute;
     width: 12px;
+    height: 12px;
+    border-color: var(--action);
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 150ms;
+    pointer-events: none;
   }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Black background for the track */
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #0000FF, #000); /* Blue to black gradient */
-    border-radius: 6px;
-    animation: scroll-flow 3s infinite ease-in-out; /* Animation */
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #0000FF, #1e3a8a); /* Darker blue on hover */
-  }
-
-  /* Scroll flow animation */
-  @keyframes scroll-flow {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 0% 100%;
-    }
-  }
+  .cells > *::before { left: 0.6rem; top: 0.6rem; border-width: 1px 0 0 1px; }
+  .cells > *::after { right: 0.6rem; bottom: 0.6rem; border-width: 0 1px 1px 0; }
+  .cells > *:hover::before,
+  .cells > *:hover::after { opacity: 1; }
+  /* On a light page the rules follow the page border colour. */
+  .cells-page { --cell-rule: rgb(var(--c-border)); }
 }
 
-.shadowy{
+@layer utilities {
+  .grid-lines {
+    background-image: linear-gradient(var(--ink-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ink-grid) 1px, transparent 1px);
+    background-size: 100% 6rem, 25% 100%;
+  }
+  .mark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--action);
+    pointer-events: none;
+  }
+  .plate-clip {
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera; IE, Edge and Firefox */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .custom-scrollbar::-webkit-scrollbar { width: 12px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: rgb(var(--c-muted)); }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #0048a8; border-radius: 6px; }
+}
+
+.shadowy {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+/*
+ * The 3D "code cube" in the hero: the four things this studio builds, one per face (software, AI, payments, data).
+ * CSS only, decorative, and still for people who prefer less motion.
+ */
+.stage {
+  display: grid;
+  place-items: center;
+  min-height: 19rem;
+  perspective: 1000px;
+  overflow: hidden;
+  background: radial-gradient(ellipse 55% 55% at 50% 52%, rgba(0, 176, 208, 0.22), transparent 70%);
+}
+.cube {
+  position: relative;
+  width: 9.5rem;
+  height: 9.5rem;
+  transform-style: preserve-3d;
+  transform: rotateX(-24deg) rotateY(-30deg);
+  animation: cube-turn 24s linear infinite;
+}
+.cube .face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, #0a5bd0, #03113f);
+  border: 1px solid rgba(0, 176, 208, 0.55);
+  box-shadow: inset 0 0 28px rgba(0, 176, 208, 0.18);
+  font: 600 1.6rem/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+  color: #6fe3f5;
+}
+.cube .front { transform: translateZ(4.75rem); }
+.cube .back { transform: rotateY(180deg) translateZ(4.75rem); }
+.cube .right { transform: rotateY(90deg) translateZ(4.75rem); }
+.cube .left { transform: rotateY(-90deg) translateZ(4.75rem); }
+.cube .top { transform: rotateX(90deg) translateZ(4.75rem); background: linear-gradient(135deg, #1a6fe0, #0048a8); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(4.75rem); box-shadow: 0 0 70px 14px rgba(0, 176, 208, 0.28); }
+/* The "data" face: a small bar chart. */
+.cube .bars { display: flex; align-items: flex-end; gap: 6px; height: 3.4rem; }
+.cube .bars i { width: 10px; background: #00b0d0; display: block; }
+@keyframes cube-turn {
+  from { transform: rotateX(-24deg) rotateY(-30deg); }
+  to { transform: rotateX(-24deg) rotateY(330deg); }
+}
+@media (max-width: 640px) { .cube { scale: 0.8; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cube { animation: none; }
+  .cells > *::before, .cells > *::after { transition: none; }
+}
+
+/*
+ * Dark theme: the colour utilities that are not theme tokens (the inner pages were written for a white page).
+ * Mapped here rather than edited in every file. Anything on a deliberately white plate (.keep-light) keeps its colours.
+ */
+[data-theme='dark'] .bg-white:not(.keep-light) { background-color: rgb(var(--c-card)); }
+[data-theme='dark'] :is(.bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-blue-50, .bg-blue-100):not(.keep-light) { background-color: rgb(var(--c-muted)); }
+[data-theme='dark'] :is(.text-black, .text-gray-900, .text-gray-800, .text-gray-700, .text-blue-950, .text-sky-950) { color: rgb(var(--c-foreground)); }
+[data-theme='dark'] :is(.text-gray-600, .text-gray-500, .text-gray-400) { color: rgb(var(--c-muted-foreground)); }
+[data-theme='dark'] :is(.text-blue-500, .text-blue-600, .text-blue-700, .text-blue-800) { color: #78c8eb; }
+[data-theme='dark'] :is(.border-gray-100, .border-gray-200, .border-gray-300, .border-black, .border-sky-950) { border-color: rgb(var(--c-border)); }
+[data-theme='dark'] .keep-light :is(.text-black, .text-gray-800, .text-gray-500) { color: #081434; }
