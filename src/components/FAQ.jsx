@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
 
@@ -72,28 +72,30 @@ const toggleFAQ = (index) => {
 
 
   return (
-    <div className='grid  px-4 md:px-16 py-20 bg-blue-100 gap-8'>
+    <section className='grid gap-10 border-t border-border px-4 py-16 md:px-16 lg:grid-cols-[1fr_1.4fr]'>
       <div>
-        <h1 className='text-6xl font-medium'>Our Frequently Asked Questions</h1>
-        <p className='text-xl my-8 text-gray-800'>Explore our Frequently Asked Questions to gain insights into our tech solutions and processes.  
-          Feel free to reach out for further clarification or details. Your understanding matters to us!</p>
+        <p className='kicker mb-4 text-muted-foreground'>Questions</p>
+        <h2 className='display text-4xl text-heading md:text-5xl'>Frequently asked questions</h2>
+        <p className='mt-6 text-lg text-muted-foreground'>Insights into our tech solutions and processes.
+          Reach out for anything not answered here.</p>
       </div>
-      <div>
+      <div className='border-t border-border'>
         {faqdata.map((item, index) => (
-          <div key={index}>
-            <div className='flex items-center justify-between bg-white my-4 py-4 text-gray-500 px-8  rounded-2xl font-semibold text-xl' onClick={() => toggleFAQ(index)}>
-              <p className={`${faqItems[index]? 'text-blue-600 text-opacity-90':'text-gray-500'}`}>{item.question}</p>
-              {faqItems[index] ? <FaMinus/> : <FaPlus  />}
-            </div>
-            {faqItems[index] && (
-              <div className='px-8 py-4 text-lg text-gray-800'>
-                <p>{item.answer}</p>
-              </div>
-            )}
+          <div key={item.question} className='border-b border-border'>
+            <button
+              type='button'
+              aria-expanded={faqItems[index]}
+              onClick={() => toggleFAQ(index)}
+              className='flex w-full items-center justify-between gap-4 py-5 text-left font-display text-lg font-bold text-foreground [font-stretch:106%] hover:text-heading'
+            >
+              <span className={faqItems[index] ? 'text-heading' : ''}>{item.question}</span>
+              <span aria-hidden='true' className='shrink-0 text-action'>{faqItems[index] ? <FaMinus /> : <FaPlus />}</span>
+            </button>
+            {faqItems[index] && <p className='max-w-3xl pb-5 text-muted-foreground'>{item.answer}</p>}
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
