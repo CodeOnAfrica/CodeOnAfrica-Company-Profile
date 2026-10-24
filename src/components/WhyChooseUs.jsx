@@ -1,26 +1,33 @@
-import React from 'react';
-import { FaBrain, FaHandshake, FaLock } from 'react-icons/fa';
+import { FaHandshake, FaLock } from 'react-icons/fa';
+import { MdRocketLaunch } from 'react-icons/md';
+
+// Three reasons, as a hairline-divided spec strip.
+const REASONS = [
+  { icon: MdRocketLaunch, value: '10+', title: 'Projects completed', body: 'Shipped and still running for schools, shops, startups and enterprises.' },
+  { icon: FaHandshake, value: null, title: 'Client-centric approach', body: 'You talk to the people building your product, with regular demos and no surprises.' },
+  { icon: FaLock, value: null, title: 'Quality, reliable & secure', body: 'Tested, reviewed and secured software, with support after launch.' },
+];
 
 const WhyChooseUs = () => {
   return (
-    <div className="flex flex-col items-start justify-center px-4 md:px-16 py-20">
-      <div className='bg-gray-400 w-full h-[1px] mb-12'></div>
-      <h2 className="text-3xl font-bold mb-8 text-blue-500">Why Choose Us?</h2> {/* Title added here */}
-      <div className="md:w-3/4 flex flex-col md:flex-row justify-between  items-center">
-        <div className="flex gap-2 items-center">
-        <h3 className="text-5xl font-bold  text-blue-500">10+</h3>
-          <h3 className="text-xl font-semibold ">Projects Completed</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          <FaHandshake size={44} className="text-blue-500 " />
-          <h3 className="text-xl font-semibold ">Client-Centric Approach</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          <FaLock size={40} className="text-blue-500 " />
-          <h3 className="text-xl font-semibold ">Quality, Reliable & Secure Software</h3>
+    <section className="px-4 py-16 md:px-16">
+      <div className="mx-auto max-w-7xl">
+        <p className="kicker mb-3 text-muted-foreground">Why choose us</p>
+        <h2 className="display mb-10 max-w-3xl text-4xl text-heading md:text-5xl">Built right, delivered, and looked after.</h2>
+        <div className="cells cells-page sm:grid-cols-3">
+          {REASONS.map(({ icon: Icon, value, title, body }) => (
+            <article key={title} className="bg-card p-7">
+              <div className="flex items-center justify-between">
+                <Icon size={26} className="text-brand" aria-hidden="true" />
+                {value && <span className="font-display text-3xl font-extrabold text-heading [font-stretch:115%]">{value}</span>}
+              </div>
+              <h3 className="mt-5 font-display text-lg font-bold text-foreground">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
